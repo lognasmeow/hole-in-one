@@ -1,7 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://chuqvqjvfmfp6"]
+[gd_scene load_steps=10 format=3 uid="uid://chuqvqjvfmfp6"]
 
 [ext_resource type="PackedScene" uid="uid://b67fckjjal4ym" path="res://Assets/Objects/Golf Ball/golf_ball.tscn" id="1_ekmjr"]
 [ext_resource type="PackedScene" uid="uid://bf0b773fngwss" path="res://Assets/Objects/Cursor/cursor.tscn" id="2_i42u0"]
+[ext_resource type="PackedScene" uid="uid://ba8abvyw61v4u" path="res://Assets/Cameras/MainLevelCamera/mainLevelCamera.tscn" id="3_kxbnw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kxbnw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_g6g03"]
+sky_material = SubResource("ProceduralSkyMaterial_kxbnw")
+
+[sub_resource type="Environment" id="Environment_54mkf"]
+background_mode = 2
+sky = SubResource("Sky_g6g03")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lw62w"]
 size = Vector2(30, 30)
@@ -13,6 +27,13 @@ albedo_color = Color(0, 0.40463212, 0.16172615, 1)
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [node name="TestArea" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_54mkf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_lw62w")
@@ -28,3 +49,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.650211, 0)
 
 [node name="cursor" parent="." instance=ExtResource("2_i42u0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.8722028, 0.7234087, 0)
+
+[node name="MainLevelCamera" parent="." instance=ExtResource("3_kxbnw")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
