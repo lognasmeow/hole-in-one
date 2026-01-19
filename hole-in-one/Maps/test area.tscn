@@ -48,7 +48,7 @@ shape = SubResource("ConvexPolygonShape3D_lw62w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.650211, 0)
 
 [node name="cursor" parent="." instance=ExtResource("2_i42u0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.8722028, 0.7234087, 0)
+position = Vector2(-0.8722028, 0.7234087)
 
 [node name="MainLevelCamera" parent="." instance=ExtResource("3_kxbnw")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
