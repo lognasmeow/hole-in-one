@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf0b773fngwss"]
+[gd_scene load_steps=3 format=3 uid="uid://bf0b773fngwss"]
 
+[ext_resource type="Texture2D" uid="uid://dq43jofcrrfxn" path="res://Assets/UI/Cursors/grab_hover.png" id="1_gw1i7"]
 [ext_resource type="Script" uid="uid://8yb2nddpsvot" path="res://Assets/Objects/Cursor/cursor.gd" id="2_i1ywj"]
 
-[node name="cursor" type="Node2D"]
+[node name="cursor" type="Sprite2D"]
+texture = ExtResource("1_gw1i7")
 script = ExtResource("2_i1ywj")
