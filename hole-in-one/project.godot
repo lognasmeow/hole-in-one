@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="Hole In One"
-run/main_scene="uid://chuqvqjvfmfp6"
+run/main_scene="uid://bx3e86dxgjgnr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=256
+window/size/viewport_height=224
 window/size/mode=2
+window/stretch/mode="viewport"
 
 [input]
 

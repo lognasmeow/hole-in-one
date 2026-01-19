@@ -4,6 +4,8 @@ const grabHoverPng = preload("res://Assets/UI/Cursors/grab_hover.png")
 const grabPng = preload("res://Assets/UI/Cursors/grab.png")
 const linkPng = preload("res://Assets/UI/Cursors/link.png")
 
+signal mouseReleased()
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
@@ -14,4 +16,5 @@ func _process(delta):
 	if Input.is_action_pressed("click"):
 		texture = grabPng
 	elif Input.is_action_just_released("click"):
+		mouseReleased.emit()
 		texture = grabHoverPng
