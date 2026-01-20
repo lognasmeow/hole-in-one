@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx3e86dxgjgnr"]
+[gd_scene load_steps=7 format=3 uid="uid://bx3e86dxgjgnr"]
 
+[ext_resource type="Script" uid="uid://bs3fw4pos5r2r" path="res://Maps/Map.gd" id="1_hm4es"]
 [ext_resource type="PackedScene" uid="uid://b46m2qm6m650y" path="res://Assets/Objects/Golf Ball/golfBall.tscn" id="1_iocvu"]
 [ext_resource type="PackedScene" uid="uid://duijsmpstus0j" path="res://Assets/Objects/Course Components/Wall/wall.tscn" id="2_rvhc4"]
 [ext_resource type="PackedScene" uid="uid://ctah0p7iam071" path="res://Assets/Objects/Course Components/Ground/ground.tscn" id="3_rvhc4"]
 [ext_resource type="PackedScene" uid="uid://bf0b773fngwss" path="res://Assets/Objects/Cursor/cursor.tscn" id="5_f2qf4"]
+[ext_resource type="PackedScene" uid="uid://cmjn5xoel7xc4" path="res://Assets/Objects/ConnectingLine/connecting_line.tscn" id="6_5ok2k"]
 
 [node name="TestArea" type="Node2D"]
+script = ExtResource("1_hm4es")
 
 [node name="GolfBall" parent="." instance=ExtResource("1_iocvu")]
 position = Vector2(126, 226)
@@ -39,5 +42,10 @@ position = Vector2(315, 223.99998)
 scale = Vector2(26.749998, 15.015624)
 
 [node name="cursor" parent="." instance=ExtResource("5_f2qf4")]
+position = Vector2(168, 231)
 
+[node name="connectingLine" parent="." instance=ExtResource("6_5ok2k")]
+
+[connection signal="ballHit" from="GolfBall" to="." method="_on_golf_ball_ball_hit"]
+[connection signal="stopped" from="GolfBall" to="." method="_on_golf_ball_stopped"]
 [connection signal="mouseReleased" from="cursor" to="GolfBall" method="_on_cursor_mouse_released"]

@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
-@export var friction: float = 200.0 
+@export var friction: float = 600.0 
 var moving: bool = false
+
+signal stopped(ballPosition: Vector2)
+signal ballHit
+
+func _ready():
+	stopped.emit(position)
 
 func _physics_process(delta):
 	if moving:
@@ -19,8 +25,11 @@ func hit(delta: float):
 	if velocity.length() < 1.0:
 		velocity = Vector2.ZERO
 		moving = false
+		stopped.emit(position)
+		print("current position", position)
 
 
 func _on_cursor_mouse_released():
-	velocity = Vector2(800, 800) # pixels/second
+	velocity = Vector2(1000, 1000) # pixels/second
+	ballHit.emit()
 	moving = true
