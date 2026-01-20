@@ -4,5 +4,7 @@
 [ext_resource type="Script" uid="uid://8yb2nddpsvot" path="res://Assets/Objects/Cursor/cursor.gd" id="2_i1ywj"]
 
 [node name="cursor" type="Sprite2D"]
+z_index = 999
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_gw1i7")
 script = ExtResource("2_i1ywj")
