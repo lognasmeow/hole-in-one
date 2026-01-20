@@ -4,10 +4,6 @@ extends CharacterBody2D
 var moving: bool = false
 
 func _physics_process(delta):
-	if Input.is_action_just_released("click"):
-		moving = true
-		velocity = Vector2(800, 800) # pixels/second
-
 	if moving:
 		hit(delta)
 
@@ -23,3 +19,8 @@ func hit(delta: float):
 	if velocity.length() < 1.0:
 		velocity = Vector2.ZERO
 		moving = false
+
+
+func _on_cursor_mouse_released():
+	velocity = Vector2(800, 800) # pixels/second
+	moving = true

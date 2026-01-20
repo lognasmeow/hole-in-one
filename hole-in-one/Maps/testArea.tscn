@@ -8,34 +8,36 @@
 [node name="TestArea" type="Node2D"]
 
 [node name="GolfBall" parent="." instance=ExtResource("1_iocvu")]
-position = Vector2(83, 150)
+position = Vector2(126, 226)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall" parent="Walls" instance=ExtResource("2_rvhc4")]
-z_index = 1
-position = Vector2(140, 93)
-scale = Vector2(10.5, 1)
-
 [node name="Wall2" parent="Walls" instance=ExtResource("2_rvhc4")]
 z_index = 1
-position = Vector2(140, 160)
-scale = Vector2(10.5, 1)
-
-[node name="Wall3" parent="Walls" instance=ExtResource("2_rvhc4")]
-z_index = 1
-position = Vector2(55, 127)
-rotation = -1.5707964
-scale = Vector2(4.45, 1)
+position = Vector2(315, 348)
+scale = Vector2(6.705, 1)
 
 [node name="Wall4" parent="Walls" instance=ExtResource("2_rvhc4")]
 z_index = 1
-position = Vector2(225, 125.99999)
+position = Vector2(315, 106.365)
+scale = Vector2(6.705, 1)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("2_rvhc4")]
+z_index = 1
+position = Vector2(104, 227)
 rotation = -1.5707964
-scale = Vector2(4.45, 1)
+scale = Vector2(3.895, 1)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("2_rvhc4")]
+z_index = 1
+position = Vector2(525.525, 227)
+rotation = -1.5707964
+scale = Vector2(3.895, 1)
 
 [node name="Ground" parent="." instance=ExtResource("3_rvhc4")]
-position = Vector2(140, 126.5)
-scale = Vector2(10.5, 4.3125)
+position = Vector2(315, 223.99998)
+scale = Vector2(26.749998, 15.015624)
 
 [node name="cursor" parent="." instance=ExtResource("5_f2qf4")]
+
+[connection signal="mouseReleased" from="cursor" to="GolfBall" method="_on_cursor_mouse_released"]

@@ -11,9 +11,9 @@ z_index = 998
 script = ExtResource("2_l5oey")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_6yuli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_l5oey")

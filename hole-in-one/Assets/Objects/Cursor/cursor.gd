@@ -4,6 +4,9 @@ const grabHoverPng = preload("res://Assets/UI/Cursors/grab_hover.png")
 const grabPng = preload("res://Assets/UI/Cursors/grab.png")
 const linkPng = preload("res://Assets/UI/Cursors/link.png")
 
+var grabLocation: Vector2
+var releaseLocation: Vector2
+
 signal mouseReleased()
 
 func _ready():

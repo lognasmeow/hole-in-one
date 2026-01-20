@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bjyt2dy514bqv" path="res://Assets/Objects/Course Components/Wall/wall.png" id="1_tu3u3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3u3"]
-size = Vector2(32, 4)
+size = Vector2(64, 8)
 
 [node name="Wall" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 texture = ExtResource("1_tu3u3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
