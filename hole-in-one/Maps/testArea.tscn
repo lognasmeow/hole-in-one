@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx3e86dxgjgnr"]
 
 [ext_resource type="PackedScene" uid="uid://b46m2qm6m650y" path="res://Assets/Objects/Golf Ball/golfBall.tscn" id="1_iocvu"]
-[ext_resource type="PackedScene" uid="uid://duijsmpstus0j" path="res://Assets/Objects/Wall/wall.tscn" id="2_rvhc4"]
+[ext_resource type="PackedScene" uid="uid://duijsmpstus0j" path="res://Assets/Objects/Course Components/Wall/wall.tscn" id="2_rvhc4"]
 [ext_resource type="PackedScene" uid="uid://ctah0p7iam071" path="res://Assets/Objects/Course Components/Ground/ground.tscn" id="3_rvhc4"]
 
 [node name="TestArea" type="Node2D"]

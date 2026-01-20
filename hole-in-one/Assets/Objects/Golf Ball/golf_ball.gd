@@ -1,21 +1,25 @@
 extends CharacterBody2D
 
+@export var friction: float = 200.0 
+var moving: bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
 func _physics_process(delta):
-	var speed: float = 1
-	var velocity = Vector2(1, -1)
-	var collision = move_and_collide(velocity * speed)
-	
+	if Input.is_action_just_released("click"):
+		moving = true
+		velocity = Vector2(800, 800) # pixels/second
+
+	if moving:
+		hit(delta)
+
+func hit(delta: float):
+	var collision = move_and_collide(velocity * delta)
 	if collision:
-		print("collision")
 		velocity = velocity.bounce(collision.get_normal())
-		#velocity *= 0.9
-		#move_and_collide(collision.get_remainder())
+		move_and_collide(collision.get_remainder())
 
+	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
-func hit(direction: Vector2, speed: float):
-	pass
+	# clamp small values to exact zero and stop
+	if velocity.length() < 1.0:
+		velocity = Vector2.ZERO
+		moving = false
